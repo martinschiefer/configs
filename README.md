@@ -9,3 +9,6 @@ sudo transactional-update shell
   exit
 
 sudo reboot
+
+
+https://github.com/cryinkfly/openSUSE-MicroOS
