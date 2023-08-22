@@ -1,0 +1,901 @@
+{
+    "modelVersion": 42,
+    "projectKey": "cl4hana",
+    "siteId": "9994",
+    "instanceKey": "trh",
+    "controls": [
+        {
+            "controlKey": "agtServiceCache",
+            "value": 1,
+            "rank": null
+        },
+        {
+            "controlKey": "ruleProcessing",
+            "value": 0,
+            "rank": null
+        },
+        {
+            "controlKey": "mode",
+            "value": "maintenance",
+            "rank": null
+        },
+        {
+            "controlKey": "bringupascsvip",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "bringdownascsvip",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "bringupersvip",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "bringdownersvip",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "mountascs",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "unmountascs",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "mounters",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "unmounters",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "stopascsinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "startascsinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "restartascsinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "stopersinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "startersinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "restartersinstance",
+            "value": 0,
+            "rank": "2"
+        },
+        {
+            "controlKey": "executeappsrvprehooks",
+            "value": false,
+            "rank": null
+        },
+        {
+            "controlKey": "executeappsrvposthooks",
+            "value": false,
+            "rank": null
+        }
+    ],
+    "flags": [
+        {
+            "flagKey": "ready",
+            "value": false
+        },
+        {
+            "flagKey": "disable",
+            "value": false
+        },
+        {
+            "flagKey": "enable",
+            "value": false
+        },
+        {
+            "flagKey": "error",
+            "value": false
+        },
+        {
+            "flagKey": "stop",
+            "value": false
+        },
+        {
+            "flagKey": "reset",
+            "value": false
+        },
+        {
+            "flagKey": "maintenance",
+            "value": true
+        }
+    ],
+    "actions": [
+        {
+            "actionKey": "switchascs",
+            "value": false
+        },
+        {
+            "actionKey": "switchers",
+            "value": false
+        }
+    ],
+    "rules": [
+        {
+            "ruleKey": "ServiceCacheRule",
+            "priority": 1
+        },
+        {
+            "ruleKey": "AgentOfflineRule",
+            "priority": 101
+        },
+        {
+            "ruleKey": "MountUtilizationWarningRule",
+            "priority": 200
+        },
+        {
+            "ruleKey": "SimpleRfcWarningRule",
+            "priority": 211
+        },
+        {
+            "ruleKey": "AscsVipOfflineWarningRule",
+            "priority": 211
+        },
+        {
+            "ruleKey": "ErsVipOfflineWarningRule",
+            "priority": 211
+        },
+        {
+            "ruleKey": "HostQueryErsWarningRule",
+            "priority": 211
+        },
+        {
+            "ruleKey": "MsgServerErrorRule",
+            "priority": 310
+        },
+        {
+            "ruleKey": "EnRepServerErrorRule",
+            "priority": 310
+        },
+        {
+            "ruleKey": "HostQueryAscsErrorRule",
+            "priority": 310
+        }
+    ],
+    "statusHosts": [
+        {
+            "hostId": "0",
+            "hostName": "aut-trh-app1",
+            "status": {
+                "AGT01": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "No enrepserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 202,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Replication is ACTIVE"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app1: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app1: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP online",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ],
+                "AGT02": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "No enrepserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 202,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Replication is ACTIVE"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app1: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app1: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP online",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "hostId": "1",
+            "hostName": "aut-trh-app2",
+            "status": {
+                "AGT01": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "No msg_server process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "No enserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 202,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Replication is ACTIVE"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app2: Could not get metric",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app2: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP online",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ],
+                "AGT02": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "No msg_server process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "No enserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "Running (Desired State: start)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 202,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Replication is ACTIVE"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app2: Could not get metric",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app2: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP online",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "hostId": "2",
+            "hostName": "aut-trh-app3",
+            "status": {
+                "AGT01": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "No msg_server process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "No enserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "No enrepserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 621,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Error fetching Replication status"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app3: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app3: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ],
+                "AGT02": [
+                    {
+                        "statusKey": "confsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvAlive",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "confsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sshsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "sapctrlsrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "netweaversrvCache",
+                        "value": true
+                    },
+                    {
+                        "statusKey": "msg_server",
+                        "value": {
+                            "name": "Message Server",
+                            "textStatus": "No msg_server process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserver",
+                        "value": {
+                            "name": "Enqueue Server",
+                            "textStatus": "No enserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enrepserver",
+                        "value": {
+                            "name": "Enqueue Replicator",
+                            "textStatus": "No enrepserver process could be found",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "enserverreplication",
+                        "value": {
+                            "status": 621,
+                            "name": "Enqueue Server Replication Status",
+                            "textStatus": "Error fetching Replication status"
+                        }
+                    },
+                    {
+                        "statusKey": "ascsmounts",
+                        "value": {
+                            "name": "(A)SCS system mount",
+                            "textStatus": "aut-trh-app3: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "ersmounts",
+                        "value": {
+                            "name": "ERS system mount",
+                            "textStatus": "aut-trh-app3: ok (6%/90%)",
+                            "status": 202
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpAscs",
+                        "value": {
+                            "name": "(A)SCS Service IP Status",
+                            "textStatus": "(A)SCS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "serviceIpErs",
+                        "value": {
+                            "name": "ERS Service IP Status",
+                            "textStatus": "ERS Service IP offline",
+                            "status": 620
+                        }
+                    },
+                    {
+                        "statusKey": "simpleRfcQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "RFC Connection",
+                            "textStatus": "RFC Query successfully processed"
+                        }
+                    },
+                    {
+                        "statusKey": "hostQuery",
+                        "value": {
+                            "status": 202,
+                            "name": "Host Query",
+                            "textStatus": "Successful"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "statusmessage": "",
+    "systemKey": "appsrv",
+    "actionsAllowed": [
+        {
+            "name": "SwitchAscsRule",
+            "allowed": true
+        },
+        {
+            "name": "SwitchErsRule",
+            "allowed": true
+        }
+    ]
+}
