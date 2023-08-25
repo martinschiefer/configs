@@ -14,3 +14,5 @@ sudo reboot
 https://github.com/cryinkfly/openSUSE-MicroOS
 
 https://gitlab.com/stephan-raabe/dotfiles
+
+https://github.com/SolDoesTech/HyprV4
