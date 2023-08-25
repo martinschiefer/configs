@@ -1,6 +1,6 @@
 # configs
 
-sudo transactional-update pkg install sway-branding-openSUSE libjack nano thunar hyprland xdg-desktop-portal-hyprland
+sudo transactional-update pkg install sway-branding-openSUSE libjack nano thunar hyprland xdg-desktop-portal-hyprland wofi
 
 sudo transactional-update shell
 
